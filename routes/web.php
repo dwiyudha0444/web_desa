@@ -19,8 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//admin
+Route::resource('/dashboard',DashboardAdminController::class)->middleware('auth');
 
-Route::resource('/dashboard',DashboardAdminController::class);
+//client
 Route::resource('/home',HomeClientController::class);
 
 //auth
