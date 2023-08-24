@@ -25,8 +25,8 @@
                             </div>
                         @endif
 
-                        <a href="{{ route('berita.create') }}"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
-                                fill="currentColor" title="Tambah Data Film" class="bi bi-bookmark-plus"
+                        <a href="{{ route('beritaa.create') }}"><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                                height="30" fill="currentColor" title="Tambah Data Film" class="bi bi-bookmark-plus"
                                 viewBox="0 0 16 16">
                                 <path
                                     d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
@@ -76,6 +76,25 @@
                                                     <td>{{ $ta->tanggal }}
                                                     </td>
                                                     <td>{{ $ta->keterangan }}</td>
+                                                    <td>
+                                                      <form method="POST" action="{{ route('beritaa.destroy',$ta->id) }}">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <a class="btn btn-info btn-sm" title="Detail" href="">
+                                                            <i class="bi bi-eye"></i>
+                                                        </a>
+                                                        &nbsp;
+                                                        <a class="btn btn-warning btn-sm" title="Edit" href="{{ url('beritaa-edit',$ta->id) }}">
+                                                            <i class="bi bi-pencil"></i>
+                                                        </a>
+                                                        &nbsp;
+                                                        <button type="submit" class="btn btn-danger btn-sm"
+                                                            title="Hapus"
+                                                            oneclick="return confirm('Anda yakin data akan dihapus?')">
+                                                            <i class="bi bi-trash"></i>
+                                                        </button>
+                                                    </form>
+                                                    </td>
                                                     {{-- <td><span class="badge bg-success">Approved</span></td> --}}
                                                 </tr>
                                             @endforeach

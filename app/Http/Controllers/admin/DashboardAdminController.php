@@ -60,6 +60,5 @@ class DashboardAdminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }

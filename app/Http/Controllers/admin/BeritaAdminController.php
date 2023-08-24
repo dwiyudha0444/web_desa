@@ -31,7 +31,36 @@ class BeritaAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'judul' => 'required|max:45',
+            'tanggal' => 'required',
+            'keterangan' => 'required',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg'
+            ]);
+            //Film::create($request->all());
+            //---aoakah user ingin upload foto
+            if(!empty($request->foto)){
+                $fileName=$request->judul.'.'.$request->foto->extension();
+                //$fileName=$request->foto->getClientOriginalName();
+                $request->foto->move(public_path('berita/img'),$fileName);
+            }
+            else{
+                $fileName = '';
+            }
+            //insert data dari request form
+            DB::table('berita')->insert(
+                [
+                    'judul' => $request->judul,
+                    'tanggal' => $request->tanggal,
+                    'keterangan' => $request->keterangan,
+                    'foto' => $fileName,
+                    'created_at' => now(),
+              ]);
+                
+
+            
+            return redirect()->route('beritaa.index')
+            ->with('success','Data Berhasil Disimpan');
     }
 
     /**
@@ -47,7 +76,8 @@ class BeritaAdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ta = Berita::find($id);
+        return view('admin.berita.edit',compact('ta'));
     }
 
     /**
@@ -63,6 +93,9 @@ class BeritaAdminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $ta = Berita::find($id);
+        Berita::where('id',$id)->delete();
+        return redirect()->route('beritaa.index')
+            ->with('success','Data Berhasil Dihapus');
     }
 }

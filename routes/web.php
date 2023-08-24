@@ -22,7 +22,8 @@ Route::get('/', function () {
 
 //admin
 Route::resource('/dashboard',DashboardAdminController::class)->middleware('auth');
-Route::resource('/berita',BeritaAdminController::class)->middleware('auth');
+Route::resource('/beritaa',BeritaAdminController::class)->middleware('auth');
+Route::get('/beritaa-edit/{id}',[BeritaAdminController::class,'edit'])->middleware('auth');
 
 //client
 Route::resource('/home',HomeClientController::class);
