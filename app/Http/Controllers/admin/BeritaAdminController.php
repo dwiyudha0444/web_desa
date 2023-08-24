@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Berita;
+use DB;
 
 class BeritaAdminController extends Controller
 {
@@ -12,7 +14,8 @@ class BeritaAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.berita.index');
+        $berita = Berita::orderBy('id','DESC')->get();
+        return view('admin.berita.index',compact('berita'));
     }
 
     /**
@@ -20,7 +23,7 @@ class BeritaAdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.berita.create');
     }
 
     /**

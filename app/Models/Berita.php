@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Berita extends Model
 {
-    use HasFactory;
+        //tambahkan kode untuk mapping ke tabel berita
+        protected $table = 'berita';
+        //mapping ke kolom fieldnya
+        protected $fillable = ['judul','tanggal','keterangan','foto'];
 }
