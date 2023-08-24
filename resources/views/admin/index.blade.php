@@ -5,7 +5,7 @@
 
         @include('admin.sidebar')
 
-        @include('admin.main')
+        @yield('content')
 
         @include('admin.footer')
 @else

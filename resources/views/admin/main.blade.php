@@ -1,3 +1,5 @@
+@extends('admin.index')
+@section('content')
 <main id="main" class="main">
 
     <div class="pagetitle">
@@ -132,3 +134,4 @@
     </section>
 
   </main><!-- End #main -->
+@endsection

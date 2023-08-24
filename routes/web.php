@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardAdminController;
+use App\Http\Controllers\admin\BeritaAdminController;
 use App\Http\Controllers\client\HomeClientController;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 //admin
 Route::resource('/dashboard',DashboardAdminController::class)->middleware('auth');
+Route::resource('/berita',BeritaAdminController::class)->middleware('auth');
 
 //client
 Route::resource('/home',HomeClientController::class);
