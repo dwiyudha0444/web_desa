@@ -94,7 +94,7 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{ url('/berita') }}">
+            <a href="{{ url('/beritaa') }}">
               <i class="bi bi-circle"></i><span>Berita</span>
             </a>
         </ul>

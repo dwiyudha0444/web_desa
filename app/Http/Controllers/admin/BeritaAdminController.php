@@ -85,7 +85,42 @@ class BeritaAdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'judul' => 'required|max:45',
+            'tanggal' => 'required',
+            'keterangan' => 'required',
+            'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg'
+            ]);
+            //Film::create($request->all());
+            //---ambil foto lama
+            $foto = DB::table('berita')->select('foto')->where('id',$id)->get();
+            foreach($foto as $co){
+                $namaFileFotoLama = $co->foto;
+            }
+            //---aoakah user ingin ganti foto lama
+            if(!empty($request->foto)){
+                //jika ada foto lama , hapus terlebih dahulu
+                if(!empty($ta->foto)) unlink('berita/img'.$ta->foto);
+                //foto lama ganti foto baru
+                $fileName=$request->judul.'.'.$request->foto->extension();
+                //$fileName=$request->foto->getClientOriginalName();
+                $request->foto->move(public_path('berita/img'),$fileName);
+            }
+            //---user tidak ganti foto lama
+            else{
+                $fileName = $namaFileFotoLama;
+            }
+            DB::table('berita')->where('id',$id)->update(
+                [
+                    'judul' => $request->judul,
+                    'tanggal' => $request->tanggal,
+                    'keterangan' => $request->keterangan,
+                    'foto' => $fileName,
+                    'created_at' => now(),
+              ]);
+            
+            return redirect('/beritaa'.'/'.$id)
+            ->with('success','Data Berhasil Diubah');
     }
 
     /**
