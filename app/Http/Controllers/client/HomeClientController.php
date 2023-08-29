@@ -4,6 +4,8 @@ namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Berita;
+use DB;
 
 class HomeClientController extends Controller
 {
@@ -12,6 +14,8 @@ class HomeClientController extends Controller
      */
     public function index()
     {
+        $berita = Berita::orderBy('id','DESC')->get();
+        return view('client.index',compact('berita'));
         return view('client.index');
     }
 
