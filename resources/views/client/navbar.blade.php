@@ -29,8 +29,22 @@
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#portfolio">Berita</a></li>
-                    <li><a href="#team">Team</a></li>
-                    
+                    <li class="dropdown"><a href="#"><span>Tentang</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                        <ul>
+                          {{-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                            <ul>
+                              <li><a href="#">Deep Drop Down 1</a></li>
+                              <li><a href="#">Deep Drop Down 2</a></li>
+                              <li><a href="#">Deep Drop Down 3</a></li>
+                              <li><a href="#">Deep Drop Down 4</a></li>
+                              <li><a href="#">Deep Drop Down 5</a></li>
+                            </ul>
+                          </li> --}}
+                          <li><a href="#visimisi">Visi & Misi</a></li>
+                          <li><a href="#anggota">Anggota</a></li>
+                          <li><a href="#">Drop Down 4</a></li>
+                        </ul>
+                      </li>
                     @auth
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ auth()->user()->name }}

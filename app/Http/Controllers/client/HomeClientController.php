@@ -15,8 +15,7 @@ class HomeClientController extends Controller
     public function index()
     {
         $berita = Berita::orderBy('id','DESC')->get();
-        return view('client.index',compact('berita'));
-        return view('client.index');
+        return view('client.main',compact('berita'));
     }
 
     /**
@@ -40,7 +39,8 @@ class HomeClientController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $ta = Berita::find($id);
+        return view('client.berita.detail',compact('ta'));
     }
 
     /**

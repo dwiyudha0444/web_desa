@@ -61,7 +61,6 @@
                                                 <th scope="col">No</th>
                                                 <th scope="col">Judul</th>
                                                 <th scope="col">Tanggal</th>
-                                                <th scope="col">Keterangan</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
@@ -73,9 +72,7 @@
                                                 <tr>
                                                     <th scope="row"><a href="#">{{ $no++ }}</a></th>
                                                     <td>{{ $ta->judul }}</td>
-                                                    <td>{{ $ta->tanggal }}
-                                                    </td>
-                                                    <td>{{ $ta->keterangan }}</td>
+                                                    <td>{{ $ta->tanggal }}</td>
                                                     <td>
                                                       <form method="POST" action="{{ route('beritaa.destroy',$ta->id) }}">
                                                         @csrf

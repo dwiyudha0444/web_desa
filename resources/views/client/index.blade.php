@@ -3,6 +3,6 @@
 
 @include('client.navbar')
 
-@include('client.main')
+@yield('content')
 
 @include('client.footer')
