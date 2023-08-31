@@ -23,15 +23,13 @@
             <a href="index.html" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <img src="client/assets/img/logo2.png" alt="">
-                {{-- <h1><span>.</span></h1> --}}
+                <h1> Kabupaten <span>Kudus</span></h1>
             </a>
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="#hero">Home</a></li>
-                    <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Berita</a></li>
                     <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
                     
                     @auth
                         <li class="dropdown">

@@ -80,7 +80,7 @@
                                                       <form method="POST" action="{{ route('beritaa.destroy',$ta->id) }}">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <a class="btn btn-info btn-sm" title="Detail" href="">
+                                                        <a class="btn btn-info btn-sm" title="Detail" href="{{ route('beritaa.show',$ta->id) }}">
                                                             <i class="bi bi-eye"></i>
                                                         </a>
                                                         &nbsp;

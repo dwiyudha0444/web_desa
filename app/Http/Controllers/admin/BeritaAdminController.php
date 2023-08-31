@@ -68,7 +68,8 @@ class BeritaAdminController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $ta = Berita::find($id);
+        return view('admin.berita.detail',compact('ta'));
     }
 
     /**
