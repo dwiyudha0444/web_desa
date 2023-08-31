@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('tanggal');
             $table->string('keterangan');
             $table->string('foto');
+            $table->string('id_name');
             $table->timestamps();
         });
     }

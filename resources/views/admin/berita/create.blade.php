@@ -56,6 +56,25 @@
                                     </div>
                                 </div>
 
+                                {{-- <div class="row mb-3">
+                                    <label for="inputDate" class="col-sm-2 col-form-label">Penerbit</label>
+                                    <div class="col-sm-10">
+                                        <input type="date" value="" name="tanggal" class="form-control">
+                                    </div>
+                                </div> --}}
+
+                                <div class="row mb-3">
+                                    <label class="col-sm-2 col-form-label">Penerbit</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-select" name="id_name">
+                                            <option selected>-- Pilih Penerbit --</option>
+                                            @foreach ($ar_user as $row)
+                                                <option value="{{ $row->id }}">{{ $row->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="row mb-3">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>
                                     <div class="col-sm-10">

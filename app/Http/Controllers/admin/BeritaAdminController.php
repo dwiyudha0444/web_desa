@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
+use App\Models\User;
 use DB;
 
 class BeritaAdminController extends Controller
@@ -23,7 +24,8 @@ class BeritaAdminController extends Controller
      */
     public function create()
     {
-        return view('admin.berita.create');
+        $ar_user = User::all();
+        return view('admin.berita.create',compact('ar_user'));
     }
 
     /**
@@ -35,6 +37,7 @@ class BeritaAdminController extends Controller
             'judul' => 'required|max:45',
             'tanggal' => 'required',
             'keterangan' => 'required',
+            'id_name' => 'required',
             'foto' => 'nullable|image|mimes:jpg,jpeg,png,gif,svg'
             ]);
             //Film::create($request->all());
@@ -53,6 +56,7 @@ class BeritaAdminController extends Controller
                     'judul' => $request->judul,
                     'tanggal' => $request->tanggal,
                     'keterangan' => $request->keterangan,
+                    'id_name' => $request->id_name,
                     'foto' => $fileName,
                     'created_at' => now(),
               ]);
