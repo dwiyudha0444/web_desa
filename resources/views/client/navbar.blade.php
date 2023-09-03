@@ -22,13 +22,13 @@
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo d-flex align-items-center">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
-                <img src="client/assets/img/logo2.png" alt="">
+                <img src="{{ asset('client/assets/img/logo2.png') }}" alt="">
                 <h1> Kabupaten <span>Kudus</span></h1>
             </a>
             <nav id="navbar" class="navbar">
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#portfolio">Berita</a></li>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/home#portfolio') }}">Berita</a></li>
                     <li class="dropdown"><a href="#"><span>Tentang</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
                           {{-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -40,8 +40,8 @@
                               <li><a href="#">Deep Drop Down 5</a></li>
                             </ul>
                           </li> --}}
-                          <li><a href="#visimisi">Visi & Misi</a></li>
-                          <li><a href="#anggota">Anggota</a></li>
+                          <li><a href="{{ url('/home#visimisi') }}">Visi & Misi</a></li>
+                          <li><a href="{{ url('/home#anggota') }}">Anggota</a></li>
                           <li><a href="#">Drop Down 4</a></li>
                         </ul>
                       </li>

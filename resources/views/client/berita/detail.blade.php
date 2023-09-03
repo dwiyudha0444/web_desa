@@ -58,6 +58,7 @@
                 <h3>Information</h3>
                 <ul>
                   <li><strong>Tanggal</strong> <span>{{ $ta->tanggal }}</span></li>
+                  <li><strong>Penerbit</strong> <span>{{ $ta->user->name }}</span></li>
                 </ul>
               </div>
             </div>

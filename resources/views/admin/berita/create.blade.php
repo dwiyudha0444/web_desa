@@ -59,7 +59,9 @@
                                 {{-- <div class="row mb-3">
                                     <label for="inputDate" class="col-sm-2 col-form-label">Penerbit</label>
                                     <div class="col-sm-10">
+                                        @foreach ($ar_user as $row)
                                         <input type="date" value="" name="tanggal" class="form-control">
+                                        @endforeach
                                     </div>
                                 </div> --}}
 

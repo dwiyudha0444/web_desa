@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\DashboardAdminController;
 use App\Http\Controllers\admin\BeritaAdminController;
+use App\Http\Controllers\admin\AnggotaAdminController;
 use App\Http\Controllers\client\HomeClientController;
 
 /*
@@ -23,6 +24,7 @@ Route::get('/', function () {
 //admin
 Route::resource('/dashboard',DashboardAdminController::class)->middleware('auth');
 Route::resource('/beritaa',BeritaAdminController::class)->middleware('auth');
+Route::resource('/anggota',AnggotaAdminController::class)->middleware('auth');
 Route::get('/beritaa-edit/{id}',[BeritaAdminController::class,'edit'])->middleware('auth');
 
 //client
