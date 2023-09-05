@@ -5,6 +5,7 @@ namespace App\Http\Controllers\client;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
+use App\Models\Anggota;
 use DB;
 
 class HomeClientController extends Controller
@@ -15,7 +16,8 @@ class HomeClientController extends Controller
     public function index()
     {
         $berita = Berita::orderBy('id','DESC')->get();
-        return view('client.main',compact('berita'));
+        $anggota = Anggota::orderBy('id','DESC')->get();
+        return view('client.main',compact('berita','anggota'));
     }
 
     /**

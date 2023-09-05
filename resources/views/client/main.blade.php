@@ -185,7 +185,7 @@
         </section><!-- End Profile Desa Section -->
 
         <!-- ======= Portfolio Section ======= -->
-        <section id="portfolio" class="portfolio sections-bg">
+        <section id="berita" class="portfolio sections-bg">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
@@ -235,49 +235,22 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-header">
-                    <h2>Anggota</h2>
+                    <h2>Struktur Desa Karangrowo</h2>
                     <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt
                         quis dolorem dolore earum</p>
                 </div>
 
                 <div class="row gy-4">
-
+                    @foreach ($anggota as $ta)
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                         <div class="member">
-                            <img src="{{ url('client/assets/img/team/team-1.jpg') }}" class="img-fluid" alt="">
-                            <h4>Walter White</h4>
-                            <span>Web Development</span>
+                            <img src="{{ url('anggota/img') }}/{{ $ta->foto }}" class="img-fluid" alt="">
+                            <h4>{{ $ta->name }}</h4>
+                            <span>{{ $ta->jabatan }}</span>
 
                         </div>
                     </div><!-- End Team Member -->
-
-                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-                        <div class="member">
-                            <img src="{{ url('client/assets/img/team/team-2.jpg') }}" class="img-fluid" alt="">
-                            <h4>Sarah Jhinson</h4>
-                            <span>Marketing</span>
-
-                        </div>
-                    </div><!-- End Team Member -->
-
-                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-                        <div class="member">
-                            <img src="{{ url('client/assets/img/team/team-3.jpg') }}" class="img-fluid" alt="">
-                            <h4>William Anderson</h4>
-                            <span>Content</span>
-
-                        </div>
-                    </div><!-- End Team Member -->
-
-                    <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-                        <div class="member">
-                            <img src="{{ url('client/assets/img/team/team-4.jpg') }}" class="img-fluid" alt="">
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-
-                        </div>
-                    </div><!-- End Team Member -->
-
+                    @endforeach
                 </div>
 
             </div>

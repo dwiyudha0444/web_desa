@@ -25,7 +25,7 @@
                             </div>
                         @endif
 
-                        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="30"
+                        <a href="{{ route('anggotaa.create') }}"><svg xmlns="http://www.w3.org/2000/svg" width="30"
                                 height="30" fill="currentColor" title="Tambah Data Film" class="bi bi-bookmark-plus"
                                 viewBox="0 0 16 16">
                                 <path
@@ -59,8 +59,9 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">No</th>
-                                                <th scope="col">Judul</th>
-                                                <th scope="col">Tanggal</th>
+                                                <th scope="col">Nama</th>
+                                                <th scope="col">Jabatan</th>
+                                                <th scope="col">Foto</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
@@ -68,20 +69,21 @@
                                             @php
                                                 $no = 1;
                                             @endphp
-                                            {{-- @foreach ($berita as $ta) --}}
+                                            @foreach ($anggota as $ta)
                                                 <tr>
                                                     <th scope="row"><a href="#">{{ $no++ }}</a></th>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>{{ $ta->name }}</td>
+                                                    <td>{{ $ta->jabatan }}</td>
+                                                    <td>{{ $ta->foto }}</td>
                                                     <td>
-                                                      <form method="POST" action="">
+                                                      <form method="POST" action="{{ route('anggotaa.destroy',$ta->id) }}">
                                                         @csrf
                                                         @method('DELETE')
                                                         <a class="btn btn-info btn-sm" title="Detail" href="">
                                                             <i class="bi bi-eye"></i>
                                                         </a>
                                                         &nbsp;
-                                                        <a class="btn btn-warning btn-sm" title="Edit" href="">
+                                                        <a class="btn btn-warning btn-sm" title="Edit" href="{{ url('anggotaa-edit',$ta->id) }}">
                                                             <i class="bi bi-pencil"></i>
                                                         </a>
                                                         &nbsp;
@@ -94,7 +96,7 @@
                                                     </td>
                                                     {{-- <td><span class="badge bg-success">Approved</span></td> --}}
                                                 </tr>
-                                            {{-- @endforeach --}}
+                                            @endforeach
                                         </tbody>
                                     </table>
 

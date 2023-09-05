@@ -3,7 +3,7 @@
 
     <div class="container">
       <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-info">
+        <div class="col-lg-6 col-md-12 footer-info">
           <a href="index.html" class="logo d-flex align-items-center">
             <span>Desa Karangrowo</span>
           </a>
@@ -16,25 +16,13 @@
           </div>
         </div>
 
-        <div class="col-lg-2 col-6 footer-links">
+        <div class="col-lg-3 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="{{ url('/home') }}">Home</a></li>
+            <li><a href="{{ url('/home#berita') }}">Berita</a></li>
+            <li><a href="{{ url('/home#visimisi') }}">Visi dan Misi</a></li>
+            <li><a href="{{ url('/home#anggota') }}">Struktur</a></li>
           </ul>
         </div>
 

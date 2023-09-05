@@ -28,7 +28,7 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ url('/home#portfolio') }}">Berita</a></li>
+                    <li><a href="{{ url('/home#berita') }}">Berita</a></li>
                     <li class="dropdown"><a href="#"><span>Tentang</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
                           {{-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>

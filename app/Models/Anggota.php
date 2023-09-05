@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anggota extends Model
 {
-    use HasFactory;
+    //tambahkan kode untuk mapping ke tabel 
+    protected $table = 'anggota';
+    //mapping ke kolom fieldnya
+    protected $fillable = ['name','jabatan','foto'];
 }

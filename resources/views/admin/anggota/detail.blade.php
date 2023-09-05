@@ -18,7 +18,7 @@
                                                     {{-- @empty($ta->foto)
                         <img src="{{ url('assets/images/thor.jpg') }}" class="img-fluid" alt="Film">
                         @else --}}
-                                                    <img src="{{ url('berita/img') }}/{{ $ta->foto }}" class="img-fluid"
+                                                    <img src="{{ url('anggota/img') }}/{{ $ta->foto }}" class="img-fluid"
                                                         alt="Film">
                                                     {{-- @endempty --}}
                                                 </div>
@@ -33,16 +33,12 @@
                                                         <table class="table">
                                                             <tbody>
                                                                 <tr>
-                                                                    <th scope="row">JUDUL</th>
-                                                                    <td>{{ $ta->judul }}</td>
+                                                                    <th scope="row">Nama</th>
+                                                                    <td>{{ $ta->name }}</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <th scope="row">TANGGAL</th>
-                                                                    <td>{{ $ta->tanggal }}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row">KETERANGAN</th>
-                                                                    <td>{{ $ta->keterangan }}</td>
+                                                                    <th scope="row">Jabatan</th>
+                                                                    <td>{{ $ta->jabatan }}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
