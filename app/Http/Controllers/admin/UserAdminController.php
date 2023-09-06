@@ -4,26 +4,18 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Anggota;
-use App\Models\Berita;
 use App\Models\User;
+use DB;
 
-class DashboardAdminController extends Controller
+class UserAdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $totalAnggota = Anggota::count();
-        $totalBerita = Berita::count();
-        $totalUser = User::count();
-
-        
-        return view('admin.main')
-        ->with('totalAnggota',$totalAnggota)
-        ->with('totalUser',$totalUser)
-        ->with('totalBerita',$totalBerita);
+        $user = User::orderBy('id','DESC')->get();
+        return view('admin.user.index',compact('user'));
     }
 
     /**
@@ -31,7 +23,7 @@ class DashboardAdminController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -55,7 +47,8 @@ class DashboardAdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $ta = User::find($id);
+        return view('admin.user.edit',compact('ta'));
     }
 
     /**
@@ -63,7 +56,19 @@ class DashboardAdminController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'role' => 'required'
+            ]);
+            
+            
+            DB::table('users')->where('id',$id)->update(
+                [
+                    'role' => $request->role,
+                    'created_at' => now(),
+              ]);
+            
+            return redirect('/user')
+            ->with('success','Data Berhasil Diubah');
     }
 
     /**
@@ -71,5 +76,9 @@ class DashboardAdminController extends Controller
      */
     public function destroy(string $id)
     {
+        $ta = User::find($id);
+        User::where('id',$id)->delete();
+        return redirect()->route('user.index')
+            ->with('success','Data Berhasil Dihapus');
     }
 }

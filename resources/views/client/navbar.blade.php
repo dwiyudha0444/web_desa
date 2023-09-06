@@ -42,7 +42,6 @@
                           </li> --}}
                           <li><a href="{{ url('/home#visimisi') }}">Visi & Misi</a></li>
                           <li><a href="{{ url('/home#anggota') }}">Anggota</a></li>
-                          <li><a href="#">Drop Down 4</a></li>
                         </ul>
                       </li>
                     @auth

@@ -32,6 +32,9 @@
             <a href="{{ url('/beritaa') }}">
               <i class="bi bi-circle"></i><span>Berita</span>
             </a>
+            <a href="{{ url('/user') }}">
+              <i class="bi bi-circle"></i><span>User</span>
+            </a>
           </li>
           
         </ul>
