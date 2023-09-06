@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Anggota;
+use App\Models\Berita;
 
 class DashboardAdminController extends Controller
 {
@@ -12,7 +14,13 @@ class DashboardAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.main');
+        $totalAnggota = Anggota::count();
+        $totalBerita = Berita::count();
+
+        
+        return view('admin.main')
+        ->with('totalAnggota',$totalAnggota)
+        ->with('totalBerita',$totalBerita);
     }
 
     /**

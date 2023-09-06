@@ -44,6 +44,11 @@
                                                                     <th scope="row">KETERANGAN</th>
                                                                     <td>{{ $ta->keterangan }}</td>
                                                                 </tr>
+                                                                
+                                                                <tr>
+                                                                    <th scope="row">Penerbit</th>
+                                                                    <td>{{ $ta->user->name }}</td>
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>

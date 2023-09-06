@@ -56,6 +56,14 @@
                                     </div>
                                 </div>
 
+                                
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-10">
+                                        <input type="hidden" name="id_name" value="{{ Auth::user()->id }}" class="form-control">
+                                    </div>
+                                </div>
+
                                 {{-- <div class="row mb-3">
                                     <label for="inputDate" class="col-sm-2 col-form-label">Penerbit</label>
                                     <div class="col-sm-10">
@@ -65,7 +73,7 @@
                                     </div>
                                 </div> --}}
 
-                                <div class="row mb-3">
+                                {{-- <div class="row mb-3">
                                     <label class="col-sm-2 col-form-label">Penerbit</label>
                                     <div class="col-sm-10">
                                         <select class="form-select" name="id_name">
@@ -75,7 +83,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="row mb-3">
                                     <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>

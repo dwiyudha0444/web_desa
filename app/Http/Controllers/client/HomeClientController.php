@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Berita;
 use App\Models\Anggota;
+
+use App\Models\User;
 use DB;
 
 class HomeClientController extends Controller
